@@ -61,14 +61,14 @@ CipherLens consists of two main components:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/CipherLens.git
+   git clone https://github.com/SanjayCheekati/CipherLens-A-Anti-phishing-extension-using-bert-algorithm.git
    cd CipherLens/server
    ```
 
 2. Create a virtual environment (optional but recommended):
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   venv\Scripts\activate
    ```
 
 3. Install required packages:
