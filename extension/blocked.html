@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Blocked - CipherLens</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    .container {
+      max-width: 600px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    h1 {
+      color: #f44336;
+      margin-bottom: 20px;
+    }
+    
+    .warning-icon {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    button.red {
+      background-color: #f44336;
+    }
+    
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="warning-icon">⚠️</div>
+    <h1>Website Blocked</h1>
+    <p>
+      CipherLens has blocked this website because it has been identified as potentially harmful.
+      The site may contain phishing attempts, malware, or other security threats that could compromise your data or device.
+    </p>
+    <p>
+      <strong>URL:</strong> <span id="blockedUrl"></span>
+    </p>
+    <div>
+      <button id="backBtn">Go Back</button>
+      <button id="proceedBtn" class="red">Proceed Anyway (Not Recommended)</button>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Display the blocked URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const blockedUrl = urlParams.get('url') || 'Unknown URL';
+      document.getElementById('blockedUrl').textContent = blockedUrl;
+      
+      // Event listeners
+      document.getElementById('backBtn').addEventListener('click', () => {
+        history.back();
+      });
+      
+      document.getElementById('proceedBtn').addEventListener('click', () => {
+        if (confirm("Warning: Proceeding to this site is not recommended. Continue anyway?")) {
+          window.location.href = blockedUrl;
+        }
+      });
+    });
+  </script>
+</body>
+</html> 

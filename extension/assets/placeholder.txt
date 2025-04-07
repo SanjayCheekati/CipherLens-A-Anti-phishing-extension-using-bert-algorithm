@@ -1,0 +1,8 @@
+Icon files would be placed here in a real extension:
+
+1. icon16.png - 16x16 size icon
+2. icon48.png - 48x48 size icon
+3. icon128.png - 128x128 size icon
+4. icon-safe.png - Icon for safe status
+5. icon-danger.png - Icon for threat detected
+6. icon-warning.png - Icon for scanning/warning status 
